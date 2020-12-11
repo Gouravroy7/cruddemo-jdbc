@@ -28,7 +28,7 @@ public class Employee {
 	
 
 	
-	// define getter/setter
+	// define getters and setters
 
 	public int getId() {
 		return id;
@@ -63,7 +63,7 @@ public class Employee {
 	}
 
 	
-	//define tostring
+	//define tostring method
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";

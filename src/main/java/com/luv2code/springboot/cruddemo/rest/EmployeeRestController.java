@@ -22,19 +22,14 @@ public class EmployeeRestController {
 	@Autowired
 	private EmployeeService employeeService;
 	
-	//quick and dirty : inject employee dao
-//	@Autowired
-//	public EmployeeRestController(EmployeeDAO theEmployeeDAO)
-//	{
-//		employeeDAO = theEmployeeDAO;
-//	}
 	
-	//expose "/employee" and return list of employees
+	//expose "/employees" and return list of ALL employees
 	@GetMapping("/employees")
 	public List<Employee> findAll() {
 		return employeeService.findAll();
 	}
 	
+	// return employee detail of a an employee with given id
 	@GetMapping("/employees/{id}") 
 	public Employee findById(@PathVariable("id") int theId)
 	{
@@ -46,7 +41,7 @@ public class EmployeeRestController {
 		return e;
 	}
 	
-	
+	// add a new employee to the database
 	@PostMapping("/addemployee")
 	public Employee addEmployee(@RequestParam(name="fname") String fname,@RequestParam(name="lname") String lname,@RequestParam(name="email") String email) {
 		
@@ -58,7 +53,7 @@ public class EmployeeRestController {
 		
 	}
 	
-	
+	// update details of an employee with given id
 	@PutMapping("/updateemployee/{id}")
 	public String updateEmployee(@PathVariable("id") int theId , @RequestParam("email") String email)
 	{
@@ -66,7 +61,7 @@ public class EmployeeRestController {
 		return employeeService.updateEmployee(theId, email);
 	}
 	
-	
+	// delete an employee with given id
 	@DeleteMapping("/deleteemployee/{id}")
 	public String deleteEmployee(@PathVariable("id") int theId)
 	{

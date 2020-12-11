@@ -51,7 +51,5 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		return employeeDAO.deleteEmployee(theId);
 	}
-	
-	
 
 }

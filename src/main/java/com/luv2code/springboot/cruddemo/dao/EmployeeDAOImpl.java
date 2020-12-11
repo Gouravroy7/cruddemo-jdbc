@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.luv2code.springboot.cruddemo.entity.Employee;
 
 @Repository
-public class EmployeeDAOHibernateImpl implements EmployeeDAO {
+public class EmployeeDAOImpl implements EmployeeDAO {
 	
 	
 	@Autowired
